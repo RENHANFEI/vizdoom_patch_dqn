@@ -108,7 +108,7 @@ class Game(object):
         render_effects_sprites=False,
         respawn_protect=True, spawn_farthest=True,
         freelook=False, name='Arnold', color=0,
-        visible=True,
+        visible=False,
         n_bots=0, use_scripted_marines=None,
         doom_skill=2
     ):
@@ -480,7 +480,7 @@ class Game(object):
             self.game.add_game_args(arg)
 
         # window visibility
-        self.game.set_window_visible(True)
+        self.game.set_window_visible(False)
 
         # available buttons
         self.mapping = add_buttons(self.game, self.action_builder.available_buttons)
