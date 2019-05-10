@@ -7,7 +7,7 @@ import numpy as np
 from numpy import pi
 from matplotlib import pyplot as plt
 
-from target_calculator import TargetCalculator
+from src.target_calculator import TargetCalculator
 
 class PatchBot(object):
 	"""docstring for PatchBot"""
@@ -20,8 +20,9 @@ class PatchBot(object):
 		self.diff = 0.05
 		self.center_diff_ratio = 1.2
 		# TURN_LEFT, TURN_RIGHT, MOVE_FORWARD
-		self.action_dict = {'left':[1, 0, 0], 'right':[0, 1, 0], 'forward':
-			[0, 0, 1], 'left_forward':[1, 0, 1], 'right_forward':[0, 1, 1]}
+		# self.action_dict = {'left':[1, 0, 0], 'right':[0, 1, 0], 'forward':
+		# 	[0, 0, 1], 'left_forward':[1, 0, 1], 'right_forward':[0, 1, 1]}
+		self.action_dict = {'left': 0, 'right': 1, 'forward': 2, 'left_forward': 3, 'right_forward': 4}
 		self.target_calculator = TargetCalculator()
 		self.right_weight = 0
 		self.counter = Counter()

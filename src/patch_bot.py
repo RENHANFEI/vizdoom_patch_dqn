@@ -7,7 +7,7 @@ import numpy as np
 from numpy import pi
 from matplotlib import pyplot as plt
 
-from target_calculator import TargetCalculator
+from src.target_calculator import TargetCalculator
 
 class PatchBot(object):
 	"""docstring for PatchBot"""

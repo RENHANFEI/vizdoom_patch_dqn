@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from patch_extractor import PatchExtractor
+from src.patch_extractor import PatchExtractor
 
 from matplotlib import pyplot as plt
 
