@@ -130,14 +130,14 @@ class DQN(object):
 
     def log_loss(self, loss_history,iter):
         logger.info('DQN loss: %.5f' % np.mean(loss_history['dqn_loss']))
-        f = open('DQN_loss.txt', 'w')
-        f.write(str(iter)+','+str(np.mean(loss_history['dqn_loss'])))
+        f = open('DQN_loss.txt', 'a')
+        f.write(str(iter)+','+str(np.mean(loss_history['dqn_loss'])) + '\n')
         f.close()
         if self.n_features > 0:
             logger.info('Game features loss: %.5f' %
                         np.mean(loss_history['gf_loss']))
-            f = open('Game_loss.txt', 'w')
-            f.write(str(iter)+','+str(np.mean(loss_history['gf_loss'])))
+            f = open('Game_loss.txt', 'a')
+            f.write(str(iter)+','+str(np.mean(loss_history['gf_loss'])) + '\n')
             f.close()
 
     def prepare_f_eval_args(self, last_states):

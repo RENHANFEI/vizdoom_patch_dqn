@@ -91,7 +91,7 @@ def parse_game_args(args):
                         help="Reload previous model")
     parser.add_argument("--dump_freq", type=int, default=0,
                         help="Dump every X iterations (0 to disable)")
-    parser.add_argument("--gpu_id", type=int, default=-1,
+    parser.add_argument("--gpu_id", type=int, default=0,
                         help="GPU ID")
     parser.add_argument("--log_frequency", type=int, default=100,
                         help="Log frequency (in seconds)")

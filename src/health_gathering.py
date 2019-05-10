@@ -26,12 +26,12 @@ def register_scenario_args(parser):
 
 
 def main(parser, args, parameter_server=None):
-    f_test = open('test_result.txt', 'w')
-    f_dqn = open('DQN_loss.txt', 'w')
-    f_game = open('Game_loss.txt', 'w')
+    f_test = open('test_result.txt', 'a')
+    f_dqn = open('DQN_loss.txt', 'a')
+    f_game = open('Game_loss.txt', 'a')
     f_test.truncate()
-    f_test.truncate()
-    f_test.truncate()
+    f_dqn.truncate()
+    f_game.truncate()
     # register model and scenario parameters / parse parameters
     register_model_args(parser, args)
     register_scenario_args(parser)
@@ -174,9 +174,9 @@ def evaluate_health_gathering(game, network, params, n_train_iter=None):
     to_log = {'min_survival_time': float(np.min(survival_time)),
               'max_survival_time': float(np.max(survival_time)),
               'mean_survival_time': float(np.mean(survival_time))}
-    f = open('test_result.txt', 'w')
+    f = open('test_result.txt', 'a')
     f.write('iter:'+str(n_iter)+','+str(survival_time)+',min'+str(np.min(survival_time))+
-            ',max'+str(np.max(survival_time))+',mean'+str(np.mean(survival_time)))
+            ',max'+str(np.max(survival_time))+',mean'+str(np.mean(survival_time)) + '\n')
     f.close()
     if n_train_iter is not None:
         to_log['n_iter'] = n_train_iter
