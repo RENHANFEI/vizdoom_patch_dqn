@@ -195,7 +195,7 @@ class Trainer(object):
             # log current average loss
             if self.n_iter % (log_frequency * update_frequency) == 0:
                 logger.info('=== Iteration %i' % self.n_iter)
-                self.network.log_loss(current_loss)
+                self.network.log_loss(current_loss, self.n_iter)
                 current_loss = self.network.new_loss_history()
 
             train_loss = self.training_step(current_loss)
