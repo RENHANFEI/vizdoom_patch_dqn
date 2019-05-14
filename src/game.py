@@ -125,7 +125,7 @@ class Game(object):
         """
         # game resources
         game_filename = '%s.wad' % ('freedoom2' if freedoom else 'Doom2')
-        self.scenario_path = os.path.join(RESOURCES_DIR, '%s.wad' % 'health_gathering')
+        self.scenario_path = os.path.join(RESOURCES_DIR, '%s.wad' % 'health_gathering_supreme')
         self.game_path = os.path.join(RESOURCES_DIR, game_filename)
 
         # check parameters
